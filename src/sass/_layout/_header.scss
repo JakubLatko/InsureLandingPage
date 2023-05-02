@@ -1,0 +1,19 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 5vw;
+    padding-block: 1rem;
+    align-items: center;
+}
+
+
+.navList{
+    display: none;
+}
+
+.hamburgerButton{
+    border: 0;
+    background-color: transparent;
+}
+

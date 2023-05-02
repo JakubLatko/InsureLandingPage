@@ -1,0 +1,122 @@
+@use "../variables" as *;
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.heroSection{
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-300 ;
+    background-image: 
+    linear-gradient( to top, white 5rem, $primary-300 5rem),
+    url(../../assets/images/bg-pattern-intro-right-mobile.svg);
+    background-repeat: no-repeat;
+    
+    background-position: bottom left,  bottom right;
+    padding-bottom: 5rem;
+}
+
+.heroText{
+    text-align: center;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-inline:auto;
+    gap: 1rem;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: top left, bottom right;
+    background-image: 
+    url(../../assets/images/bg-pattern-intro-left-mobile.svg),;
+    h1{
+        font-family: $ff-heading;
+        font-weight: 400;
+        font-size: clamp(1rem, 12vw, 2.5rem);
+        width: 14ch;
+        line-height: 1;
+        color: $neutral-900;
+    }
+    p{
+        font-family: $ff-body;
+        color: $neutral-900;
+        opacity: 0.7;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        width: 30ch ;
+    }
+    div{
+        border: 1px solid $neutral-900;
+        padding: 0.5em 2em;
+        width: fit-content;
+        a{
+            color: $neutral-900;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: $ff-body;
+        }
+    }
+}
+
+
+.perkSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block:5rem ;
+    
+}
+
+.sectionIntro{
+    font-family: $ff-heading;
+    font-weight: 400;
+    font-size: clamp(1rem, 12vw,  2.5rem);
+    margin-bottom: 5rem;
+    position: relative;
+    width: 100%;
+    margin-inline: auto;
+    text-align: center;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 50%;
+        top: -2rem;
+        background-color: rgba($neutral-500, 0.4);
+        height: 1px;
+        left: 25%;
+    }
+}
+
+.perkWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+   
+}
+
+.perk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    img{
+
+    }
+    h3{
+        font-family: $ff-heading;
+        font-weight: 400;
+        font-size: clamp(1rem, 8vw, 2rem);
+    }
+    p{
+        width: 35ch;
+        font-family: $ff-body;
+        color:$neutral-500;
+    }
+}
