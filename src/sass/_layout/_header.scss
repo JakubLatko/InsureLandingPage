@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 header{
     display: flex;
     flex-direction: row;
@@ -9,11 +11,96 @@ header{
 
 
 .navList{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    //bottom: -1rem;
+    padding-bottom: 15rem;
+    padding-top: 2rem;
+    background-color: $primary-300;
+    list-style: none;
+    padding-inline-start: 0;
+    border-bottom: 2px solid $neutral-500;
+    z-index: 100;
+    background-image: url(../../assets/images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    transition: 500ms ease-in-out;
+    li{
+        text-align: center;
+        padding-block: 1rem;
+        width: 90%;
+        margin-inline: auto;
+        &:last-child{
+            border: 1px solid $neutral-900;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: $ff-body;
+            font-size: clamp(.75rem, 5vw, 1.5rem);
+        }
+    }
 }
+
+.navClosed{
+    transform: translateY(-120%);
+    transition: 500ms ease-in-out;
+}
+
 
 .hamburgerButton{
     border: 0;
     background-color: transparent;
+    
 }
 
+
+@media only screen and (min-width:1440px){
+    header{
+        margin-inline: 10vw;
+    }
+    .navList{
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        background-color: transparent;
+        position: relative;
+        background-image: none;
+        border: 0;
+        align-items: center;
+        gap: 3rem;
+        li{
+            &:first-child{
+                border: 0;
+            }
+            &:last-child{
+                border: 1px solid black;
+                padding: .5em 2em;
+            }
+            padding: 0;
+            width: fit-content;
+            border:0;
+            a{
+                color:$neutral-500;
+                font-size: clamp(1rem, 1.25vw, 1.5rem);
+            }
+        }
+        &::before{
+            content: '';
+            background: none;
+
+        }
+    }
+    .navClosed{
+        transform: none;
+        inset: 0;
+    }
+    .hamburgerButton{
+        display: none;
+    }
+}

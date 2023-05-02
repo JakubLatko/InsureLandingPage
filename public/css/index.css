@@ -87,7 +87,44 @@ header {
 }
 
 .navList {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  padding-bottom: 15rem;
+  padding-top: 2rem;
+  background-color: hsl(256, 26%, 20%);
+  list-style: none;
+  padding-inline-start: 0;
+  border-bottom: 2px solid hsl(273, 4%, 51%);
+  z-index: 100;
+  background-image: url(../../assets/images/bg-pattern-mobile-nav.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  transition: 500ms ease-in-out;
+}
+.navList li {
+  text-align: center;
+  padding-block: 1rem;
+  width: 90%;
+  margin-inline: auto;
+}
+.navList li:last-child {
+  border: 1px solid hsl(0, 0%, 98%);
+}
+.navList li a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Karla", sans-serif;
+  font-size: clamp(0.75rem, 5vw, 1.5rem);
+}
+
+.navClosed {
+  transform: translateY(-120%);
+  transition: 500ms ease-in-out;
 }
 
 .hamburgerButton {
@@ -95,6 +132,49 @@ header {
   background-color: transparent;
 }
 
+@media only screen and (min-width: 1440px) {
+  header {
+    margin-inline: 10vw;
+  }
+  .navList {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    background-image: none;
+    border: 0;
+    align-items: center;
+    gap: 3rem;
+  }
+  .navList li {
+    padding: 0;
+    width: fit-content;
+    border: 0;
+  }
+  .navList li:first-child {
+    border: 0;
+  }
+  .navList li:last-child {
+    border: 1px solid black;
+    padding: 0.5em 2em;
+  }
+  .navList li a {
+    color: hsl(273, 4%, 51%);
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+  }
+  .navList::before {
+    content: "";
+    background: none;
+  }
+  .navClosed {
+    transform: none;
+    inset: 0;
+  }
+  .hamburgerButton {
+    display: none;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -140,12 +220,13 @@ main {
   font-size: clamp(1rem, 4vw, 1.5rem);
   width: 30ch;
 }
-.heroText div {
+
+.CTAbtn {
   border: 1px solid hsl(0, 0%, 98%);
   padding: 0.5em 2em;
   width: fit-content;
 }
-.heroText div a {
+.CTAbtn a {
   color: hsl(0, 0%, 98%);
   text-decoration: none;
   text-transform: uppercase;
@@ -204,4 +285,92 @@ main {
   width: 35ch;
   font-family: "Karla", sans-serif;
   color: hsl(273, 4%, 51%);
+}
+
+.secondCTA {
+  display: flex;
+  margin-inline: 5vw;
+  flex-direction: column;
+  background-color: hsl(256, 26%, 20%);
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-block: 5rem;
+  padding: 4rem 1rem;
+  background-image: url(../../assets/images/bg-pattern-how-we-work-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+}
+.secondCTA h2 {
+  font-family: "DM Serif Display", serif;
+  color: hsl(0, 0%, 98%);
+  font-weight: 400;
+  font-size: clamp(1rem, 10vw, 2.5rem);
+  line-height: 1;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 98%);
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  padding-block: 4rem;
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/images/bg-pattern-footer-mobile.svg);
+}
+.socials img {
+  object-fit: scale-down;
+}
+.socials::before {
+  content: "";
+  width: calc(100% - 10vw);
+  height: 1px;
+  left: 5vw;
+  bottom: 0;
+  position: absolute;
+  background-color: rgba(131, 125, 135, 0.5);
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footerListWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footerListWrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  padding-inline-start: 0px;
+}
+.footerListWrapper ul li {
+  text-align: center;
+}
+.footerListWrapper ul li:first-child {
+  margin-bottom: 1rem;
+}
+.footerListWrapper ul li:first-child p {
+  color: hsl(273, 4%, 51%);
+}
+.footerListWrapper ul li a, .footerListWrapper ul li p {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Karla", sans-serif;
+  color: hsl(256, 26%, 20%);
+  font-weight: 700;
+  font-size: clamp(0.75rem, 3.5vw, 1.25rem);
 }
