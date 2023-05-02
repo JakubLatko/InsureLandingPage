@@ -81,6 +81,15 @@ header{
             &:last-child{
                 border: 1px solid black;
                 padding: .5em 2em;
+                &:hover,
+                &:focus-within{
+                    background-color: $primary-300;
+                    cursor: pointer;
+                    transition: 250ms ease-in;
+                    a{
+                        color: $neutral-900;
+                    }
+                }
             }
             padding: 0;
             width: fit-content;
@@ -88,6 +97,14 @@ header{
             a{
                 color:$neutral-500;
                 font-size: clamp(1rem, 1.25vw, 1.5rem);
+            }
+            &:hover,
+            &:focus-within{
+                cursor: pointer;
+                transition: 250ms ease-in;
+                a{
+                    color: $primary-300;
+                }
             }
         }
         &::before{

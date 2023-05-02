@@ -69,3 +69,59 @@ footer{
         }
     }
 }
+
+
+@media only screen and (min-width:1440px){
+    footer{
+        
+        //background-color: white;
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-image: url(../../assets/images/bg-pattern-footer-desktop.svg);
+    }
+    .socials{
+        padding-inline: 10vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-image: none;
+        &::before{
+            width: calc(100% - 20vw );
+            left: 10vw;
+        }
+    }
+    .socialMedia{
+        gap: 2rem;
+        img{
+            &:hover,
+            &:focus-within{
+                cursor: pointer;
+            }
+        }
+    }
+    .footerListWrapper{
+        width: 100%;
+        padding-inline: 10vw;
+        padding-bottom: 5rem;
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        justify-content: start;
+        gap:15%;
+        align-items: start;
+        ul{
+            text-align: left;
+            align-items: start;
+            li{
+                a{
+                    &:hover,
+                    &:focus-within{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    } 
+                }
+            }
+        }
+    }
+}

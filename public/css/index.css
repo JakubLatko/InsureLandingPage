@@ -159,9 +159,24 @@ header {
     border: 1px solid black;
     padding: 0.5em 2em;
   }
+  .navList li:last-child:hover, .navList li:last-child:focus-within {
+    background-color: hsl(256, 26%, 20%);
+    cursor: pointer;
+    transition: 250ms ease-in;
+  }
+  .navList li:last-child:hover a, .navList li:last-child:focus-within a {
+    color: hsl(0, 0%, 98%);
+  }
   .navList li a {
     color: hsl(273, 4%, 51%);
     font-size: clamp(1rem, 1.25vw, 1.5rem);
+  }
+  .navList li:hover, .navList li:focus-within {
+    cursor: pointer;
+    transition: 250ms ease-in;
+  }
+  .navList li:hover a, .navList li:focus-within a {
+    color: hsl(256, 26%, 20%);
   }
   .navList::before {
     content: "";
@@ -310,6 +325,123 @@ main {
   line-height: 1;
 }
 
+@media only screen and (min-width: 1440px) {
+  .heroSection {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10vw;
+    background-image: url(../../assets/images/bg-pattern-intro-left-desktop.svg), url(../../assets/images/bg-pattern-intro-right-desktop.svg), linear-gradient(to top, white 10rem, hsl(256, 26%, 20%) 10rem);
+    background-position: bottom left, top right;
+    background-size: 10%, 25%, 100%;
+  }
+  .heroSection img {
+    object-fit: contain;
+    width: 40vw;
+    padding-block: 4rem;
+    transform: translateY(5rem);
+    margin-left: auto;
+  }
+  .heroText {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    background-image: none;
+    gap: 2rem;
+    padding-block: 3rem;
+    position: relative;
+  }
+  .heroText::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    width: 30%;
+    height: 2px;
+    background-color: hsl(273, 4%, 51%);
+  }
+  .heroText h1 {
+    font-size: clamp(2rem, 5vw, 5rem);
+    margin-right: auto;
+  }
+  .heroText p {
+    margin-right: auto;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    width: fit-content;
+    max-width: 45ch;
+  }
+  .heroText .CTAbtn {
+    margin-right: auto;
+    z-index: 50;
+  }
+  .heroText .CTAbtn a {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+  .heroText .CTAbtn:hover, .heroText .CTAbtn:focus-within {
+    background-color: hsl(0, 0%, 98%);
+    cursor: pointer;
+    transition: 250ms ease-in;
+  }
+  .heroText .CTAbtn:hover a, .heroText .CTAbtn:focus-within a {
+    color: hsl(256, 26%, 20%);
+  }
+  .perkSection {
+    margin-inline: 10vw;
+  }
+  .sectionIntro {
+    margin-right: auto;
+    text-align: left;
+    width: 100%;
+  }
+  .sectionIntro::before {
+    left: 0;
+    width: 10%;
+  }
+  .perkWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .perk {
+    text-align: left;
+    align-items: start;
+    margin-right: auto;
+  }
+  .perk h3 {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+  }
+  .perk p {
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+  }
+  .secondCTA {
+    display: flex;
+    flex-direction: row;
+    margin-inline: 10vw;
+    justify-content: space-between;
+    padding: 4rem;
+    background-image: url(../../assets/images/bg-pattern-how-we-work-desktop.svg);
+    background-size: contain;
+  }
+  .secondCTA h2 {
+    max-width: 20ch;
+    text-align: left;
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+  .secondCTA .CTAbtn:hover, .secondCTA .CTAbtn:focus-within {
+    background-color: hsl(0, 0%, 98%);
+    cursor: pointer;
+    transition: 250ms ease-in;
+  }
+  .secondCTA .CTAbtn:hover a, .secondCTA .CTAbtn:focus-within a {
+    color: hsl(256, 26%, 20%);
+  }
+  .secondCTA .CTAbtn a {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+}
 footer {
   display: flex;
   flex-direction: column;
@@ -373,4 +505,49 @@ footer {
   color: hsl(256, 26%, 20%);
   font-weight: 700;
   font-size: clamp(0.75rem, 3.5vw, 1.25rem);
+}
+
+@media only screen and (min-width: 1440px) {
+  footer {
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-image: url(../../assets/images/bg-pattern-footer-desktop.svg);
+  }
+  .socials {
+    padding-inline: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: none;
+  }
+  .socials::before {
+    width: calc(100% - 20vw);
+    left: 10vw;
+  }
+  .socialMedia {
+    gap: 2rem;
+  }
+  .socialMedia img:hover, .socialMedia img:focus-within {
+    cursor: pointer;
+  }
+  .footerListWrapper {
+    width: 100%;
+    padding-inline: 10vw;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: start;
+    gap: 15%;
+    align-items: start;
+  }
+  .footerListWrapper ul {
+    text-align: left;
+    align-items: start;
+  }
+  .footerListWrapper ul li a:hover, .footerListWrapper ul li a:focus-within {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
