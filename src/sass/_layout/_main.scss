@@ -144,16 +144,62 @@ main{
     }
     
 }
+@media only screen and (min-width:768px){
+
+    .heroSection{
+        display: flex;
+        flex-direction: column-reverse;
+        img{
+            max-width: 100vw;
+            
+            padding-top: 15vw;
+            margin-inline: auto;
+            padding-inline: 25vw;
+            background-color: white;
+        }
+    }
+
+    .heroText{
+        padding-block:5rem;
+        gap: 2rem;
+        h1{
+            font-size: clamp(3rem, 8vw, 4rem);
+        }
+        p{
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            max-width: 50ch;
+            width: auto;
+        }
+        .CTAbtn{
+            a{
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+            }
+        }
+    }
+    .sectionIntro{
+        font-size: clamp(2.5rem, 7vw, 5rem);
+    }
+    .perkWrapper{
+        gap: 5rem;
+    }
+    .perk{
+        h3{
+            font-size: clamp(2rem, 4vw, 4rem);
+        }
+        p{
+            font-size: clamp(1rem, 2.25vw, 2rem);
+        }
+    }
+}
 
 
-@media only screen and (min-width:1440px){
+@media only screen and (min-width:1024px){
     .heroSection{
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
-        //padding-block: 10rem;
-        padding-inline: 10vw;
+        padding-inline: 5vw;
         background-image: 
         url(../../assets/images/bg-pattern-intro-left-desktop.svg),
         url(../../assets/images/bg-pattern-intro-right-desktop.svg),
@@ -163,10 +209,11 @@ main{
         img{
             object-fit: contain;
             width: 40vw;
-            //max-width: 40%;
             padding-block: 4rem;
             transform: translateY(5rem);
-            margin-left: auto;
+            margin-left: 2rem;
+            padding-inline: 0;
+            padding-top: 0;
         }
     }
     .heroText{
@@ -216,7 +263,7 @@ main{
         }
     }
     .perkSection{
-        margin-inline: 10vw;    
+        margin-inline: 5vw;    
     }
     
     .sectionIntro{
@@ -233,6 +280,7 @@ main{
         flex-direction: row;
         justify-content: space-between;
         gap:1rem;
+        width: 100%;
     }
     .perk{
         text-align: left;
@@ -251,7 +299,7 @@ main{
     .secondCTA{
         display: flex;
         flex-direction: row;
-        margin-inline: 10vw;
+        margin-inline: 5vw;
         justify-content: space-between;
         padding: 4rem;
         background-image: url(../../assets/images/bg-pattern-how-we-work-desktop.svg);
@@ -277,4 +325,19 @@ main{
         }
     }
 
+}
+
+
+
+
+@media only screen and (min-width:1440px){
+    
+    
+    .heroSection{
+        padding-inline: 10vw;
+    }
+    .secondCTA,
+    .perkSection{
+        margin-inline: 10vw;
+    }
 }
